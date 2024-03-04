@@ -12,6 +12,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository4;
+    @SuppressWarnings("null")
     @Override
     public void deleteUser(Integer userId) {
         userRepository4.deleteById(userId);
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User updatePassword(Integer userId, String password) {
+        @SuppressWarnings("null")
         User user = userRepository4.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
         user.setPassword(password);
         return userRepository4.save(user);

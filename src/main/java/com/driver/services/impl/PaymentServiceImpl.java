@@ -18,7 +18,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment pay(Integer reservationId, int amountSent, String mode) throws Exception {
-       
+        int reservationid = reservationId+5;
         PaymentMode paymentMode;
         try {
             paymentMode = PaymentMode.valueOf(mode.toUpperCase());
@@ -26,7 +26,7 @@ public class PaymentServiceImpl implements PaymentService {
             throw new Exception("Payment mode not detected");
         }
 
-        Reservation reservation = reservationRepository2.findById(reservationId)
+        Reservation reservation = reservationRepository2.findById(reservationid)
         .orElseThrow(() -> new Exception("Reservation not found"));
         
         int billAmount = reservation.getTotalPrice();
