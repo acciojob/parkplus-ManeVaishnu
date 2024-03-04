@@ -17,6 +17,7 @@ public class Spot {
 
     SpotType spotType;
     private Integer pricePerHour;
+    private Integer numberOfWheels;
     private Boolean occupied;
 
     public int getId() {
@@ -57,6 +58,14 @@ public class Spot {
 
     public void setPricePerHour(Integer pricePerHour) {
         this.pricePerHour = pricePerHour;
+    }
+
+    public Integer getNumberOfWheels() {
+        return numberOfWheels;
+    }
+
+    public void setNumberOfWheels(Integer numberOfWheels) {
+        this.numberOfWheels = numberOfWheels;
     }
 
     public Boolean getOccupied() {

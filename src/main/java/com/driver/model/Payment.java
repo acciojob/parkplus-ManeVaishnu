@@ -13,6 +13,7 @@ public class Payment {
     private Reservation reservation;
 
     boolean paymentCompleted;
+    private int amountSent;
     PaymentMode paymentMode;
 
     public int getId() {
@@ -45,5 +46,11 @@ public class Payment {
 
     public void setPaymentMode(PaymentMode paymentMode) {
         this.paymentMode = paymentMode;
+    }
+    public int getAmountPaie(){
+        return amountSent;
+    }
+    public void setAmountPaid(int amountSent){
+        this.amountSent = amountSent;
     }
 }

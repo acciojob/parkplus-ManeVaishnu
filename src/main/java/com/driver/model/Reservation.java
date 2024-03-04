@@ -1,7 +1,6 @@
 package com.driver.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 public class Reservation {
@@ -21,7 +20,7 @@ public class Reservation {
     private Payment payment;
 
     private int numberOfHours;
-
+    private int totalPrice;
     public int getId() {
         return id;
     }
@@ -60,5 +59,12 @@ public class Reservation {
 
     public void setNumberOfHours(int numberOfHours) {
         this.numberOfHours = numberOfHours;
+    }
+    public int getTotalPrice() { 
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
