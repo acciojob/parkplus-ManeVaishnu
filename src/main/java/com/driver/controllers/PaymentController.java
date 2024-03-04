@@ -22,7 +22,7 @@ public class PaymentController {
         try {
             return paymentService.pay(reservationId, amountSent, mode);
         } catch (Exception e) {
-            return null;
+            throw new Exception(e.getMessage());
         }
     }
 }

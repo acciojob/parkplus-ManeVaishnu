@@ -24,12 +24,11 @@ public class ReservationServiceImpl implements ReservationService {
     ParkingLotRepository parkingLotRepository3;
     @Override
     public Reservation reserveSpot(Integer userId, Integer parkingLotId, Integer timeInHours, Integer numberOfWheels) throws Exception {
-        int userid = userId+5;
-        User user = userRepository3.findById(userid)
+        User user = userRepository3.findById(userId)
                 .orElseThrow(() -> new Exception("Cannot make reservation"));
         
         @SuppressWarnings("unused")
-        ParkingLot parkingLot = parkingLotRepository3.findById(userid)
+        ParkingLot parkingLot = parkingLotRepository3.findById(userId)
                 .orElseThrow(() -> new Exception("Cannot make reservation"));
 
         List<Spot> availableSpots = spotRepository3.findByParkingLotIdAndNumberOfWheelsGreaterThanEqual(parkingLotId, numberOfWheels);

@@ -21,7 +21,7 @@ public class ReservationController {
         try {
             return reservationService.reserveSpot(userId, parkingLotId, timeInHours, numberOfWheels);
         } catch (Exception e) {
-            return null;
+            throw new Exception(e.getMessage());
         }
     }
 }
